@@ -1,41 +1,44 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>Peace of mind from prototype to production</p>
-</section>
+<html>
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head></head>
+<body>
+  <div id="top_left">
+    <div id="node_selector">
+      <ul></ul>
+      <input type="text" placeholder={"newnode@#{hostname()}"}/>
+    </div>
 
-<section class="row">
-  <article class="column">
-    <h2>Resources</h2>
-    <ul>
-      <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.6/CHANGELOG.md">v1.6 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://web.libera.chat/#elixir">#elixir on Libera Chat (IRC)</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-      <li>
-        <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
-      </li>
-      <li>
-        <a href="https://discord.gg/elixir">Elixir on Discord</a>
-      </li>
-    </ul>
-  </article>
-</section>
+    <div id="controls">
+      <button id="stop_msg_tracing">Stop Msg Tracing</button>
+    </div>
+
+    <div id="legend">
+      <svg>
+        <g class="process supervisor">
+          <circle cx="10" cy="20" r="5"></circle>
+          <text x="10" y="20" dx="8" dy="3">Supervisor</text>
+        </g>
+        <g class="process normal">
+          <circle cx="10" cy="40" r="5"></circle>
+          <text x="10" y="40" dx="8" dy="3">Process</text>
+        </g>
+        <g class="process normal msg_traced">
+          <circle cx="10" cy="60" r="5"></circle>
+          <text x="10" y="60" dx="8" dy="3">Process (tracing)</text>
+        </g>
+        <g class="process port">
+          <circle cx="10" cy="80" r="5"></circle>
+          <text x="10" y="80" dx="8" dy="3">Port</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="full">
+      <div id="graph"></div>
+      <div id="log"></div>
+  </div>
+</body>
+</html>
+
